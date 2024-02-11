@@ -56,25 +56,25 @@ async def cmd_dice(message: types.Message, bot: Bot):
 # dp = Dispatcher(bot)
 
 
-async def get_joke():
-    url = "https://official-joke-api.appspot.com/jokes/random"
-    response = requests.get(url)
-    joke_data = response.json()
-    return joke_data['setup'], joke_data['punchline']
+# async def get_joke():
+#     url = "https://official-joke-api.appspot.com/jokes/random"
+#     response = requests.get(url)
+#     joke_data = response.json()
+#     return joke_data['setup'], joke_data['punchline']
 
 
-@dp.message_handler(commands=['joke'])
-async def send_joke(message: types.Message):
-    setup, punchline = await get_joke()
-    await message.answer(f"{setup}\n\n{punchline}")
+# @dp.message_handler(commands=['joke'])
+# async def send_joke(message: types.Message):
+#     setup, punchline = await get_joke()
+#     await message.answer(f"{setup}\n\n{punchline}")
 
 
-async def on_startup(dp):
-    await bot.set_my_commands([
-        types.BotCommand("joke", "Get a random joke")
-    ])
+# async def on_startup(dp):
+#     await bot.set_my_commands([
+#         types.BotCommand("joke", "Get a random joke")
+#     ])
 
 
-if __name__ == '__main__':
-    from aiogram import executor
-    executor.start_polling(dp, on_startup=on_startup)
+# if __name__ == '__main__':
+#     from aiogram import executor
+#     executor.start_polling(dp, on_startup=on_startup)
